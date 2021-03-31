@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:local="clr-namespace:ChipCustomization"
+             x:Class="ChipCustomization.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout HorizontalOptions="Center" Margin="30,0,0,0" VerticalOptions="Center">
+            <buttons:SfChipGroup ItemsSource="{Binding Employees}" 
+                                    x:Name="chipGroup" 
+                                    DisplayMemberPath="Name" 
+                                    ChipBackgroundColor="Transparent"
+                                    SelectedChipBackgroundColor="Transparent" 
+                                    SelectionChanged="TagsChipGroup_SelectionChanged"
+                                    Type="Filter" >
+
+                <buttons:SfChipGroup.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout InputTransparent="True">
+                            <buttons:SfChip Text="{Binding Name}" TextColor="{Binding TextColor}" BackgroundColor="{Binding ChipColor}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </buttons:SfChipGroup.ItemTemplate>
+
+                <buttons:SfChipGroup.ChipLayout>
+                    <FlexLayout 
+						HorizontalOptions="Start" 
+						VerticalOptions="Center" 
+						Direction="Row" 
+						Wrap="Wrap"
+						JustifyContent="Start"
+						AlignContent="Start" 
+						AlignItems="Start"/>
+                </buttons:SfChipGroup.ChipLayout>
+
+            </buttons:SfChipGroup>
+
+        </StackLayout>
+</ContentPage>
