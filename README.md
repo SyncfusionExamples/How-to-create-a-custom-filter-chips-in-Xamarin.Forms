@@ -1,4 +1,4 @@
-# How-to-create-a-custom-filter-chips-in-Xamarin.Forms
+# How to create a custom filter chips in Xamarin.Forms
 
 Filter type [Xamarin.Forms ChipGroup](https://help.syncfusion.com/xamarin/chips/getting-started) allows us to select more than of chip along with UI customization to differentiate the selected and unselected chips. 
 
